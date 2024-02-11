@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css"/>
+    <title>Library</title>
 </head>
 <body>
-    
+    <header>
+        <hl>Library Books</h1>
+    </header>
+
+    <button class="add-book-dialog-button">Add New Book</button>
+
+    <dialog class="modal">
+        <form action="/script.js" method="dialog" class="book-input">
+            <h1>Add New Book</h1>
+            <label>Title:<input id="title" class="input-field" name="title" type="text"></label>
+            <label>Author:<input id="author" class="input-field" name="autor" type="text"></label>
+            <label>Pages: <input id="page-count" class="input-field" name="pages" type="number"></label>
+            <label>Have you read this book? <input id="read-yn" class="read-yn" form="readyn" name="read" type="checkbox"></label>
+        </form>
+        <button class="dialog-submit" name="submit" type="submit">Add to library</button>
+        <button id="close-button" name="close" class="close-button">Close</button>
+    </dialog>
 </body>
 <script src="/script.js"></script>
 </html>
