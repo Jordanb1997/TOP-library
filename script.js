@@ -17,6 +17,8 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(new Book(title, author, pages, read));
+
+    myLibrary.forEach((book) => console.log(book));
 }
 
 
@@ -27,13 +29,28 @@ openButton.addEventListener("click", () => {
 });
 
 submitButton.addEventListener("click", (e) => {
-    addBookToLibrary(title.value, author.value, 45, true);
-    console.log(e.title);
+    e.preventDefault();
 
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const pages = document.querySelector('#pages').value;
+    const read = document.querySelector('#read-yn').value;
+
+    addBookToLibrary(title, author, pages, read);
+    clear();
+    dialog.close();
 
 });
 
+function clear() {
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
+    document.querySelector("#pages").value = "";
+    document.querySelector('#read-yn').checked = false;
+}
+
 closeButton.addEventListener("click", () => {
+    clear();
     dialog.close();
 });
 
